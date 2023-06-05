@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongodb Handson 1</title>
+</head>
+<body>
+
+     <h1>MONGODB HANDSON 1</h1><br>
+
+    <h2>Q:01.Create a database , give it name like ""Human_Resource"". Create a collection inside this named ""employee""</h2>
+    <h3>Answer 01:</h3>
+    <h2>Create a database , give it name like "Human_Resource"</h2>
+    <h3>use Human_Resources</h3>
+    <h2>Create a collection inside this named "employee"</h2>
+    <h3><pre>
+db.employee.insertMany([
+    {
+       
+        "firstName": "John",
+        "lastName": "Doe",
+        "salary": "25000",
+        "department": "HR",
+        "lastCompany": "X",
+        "lastSalary": "10000",
+        "overallExp": "2",
+        "contactInfo": "1234567890",
+        "yearGrad": "2016",
+        "gradStream": "CSE"
+    },
+    
+])</pre></h3>
+<br>
+<h2>Q:2.Query the collection ""employee"" and list all the documents</h2>
+<h3>Answer 2. db.employee.find({})</h3>
+
+        <h2>Q:3.Query the collection ""employee"" and list the employees who are having salary more than 30000</h2>
+        <h3> Answer: 3.  db.employee.find({"salary":{$gt:"30000"}})</h3><br>
+        <h2>Q:4. Query the collection ""employee"" and list the employees who are having experience more than 2 years.</h2>
+        <h3>Answer:4.  db.employee.find({"experience":{$gt:"2"}})</h3><br>
+        <h2>Q:5. Query the collection ""employee"" and list the employees who are graduated after 2015 and having experience
+            more than 1 year </h2>
+        <h3>Answer:5.  db.employee.find({"yearGrad":{$gt:"2015"},"overallExp":{$gt:"1"}})</h3><br>
+        <h2>Q:6. Query the collection ""employee"" and update the salary of the employee whose salary is greater than 70000
+            to 65000.</h2>
+        <h3>Answer.6. db.employee.updateMany({salary:{$gt:"70000"}},{$set:{salary:"65000"}})</h3><br>
+        <h2>Q:7. Delete all the documents from ""employee"" where last company is Y"</h2>
+        <h3>Answer:7. db.employee.deleteMany({lastCompany:"Y"})</h3><br>
+    
+</body>
+</html>
